@@ -146,7 +146,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
 <body>
 
 <nav>
-  <div class="logo">Оча<span>г</span></div>
+  <div class="logo">Hear<span>th</span></div>
   <ul class="nav-links">
     <li><a href="#menu">Menu</a></li>
     <li><a href="#about">About</a></li>
@@ -181,9 +181,9 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
 
 <div class="info-bar">
   <div class="info-item"><i class="ti ti-map-pin" aria-hidden="true"></i><span>8 Garden Street · <strong>London</strong></span></div>
-  <div class="info-item"><i class="ti ti-clock" aria-hidden="true"></i><span>Пн–Вс: <strong>11:00 — 23:00</strong></span></div>
+  <div class="info-item"><i class="ti ti-clock" aria-hidden="true"></i><span>Mon–Sun: <strong>11:00 AM – 11:00 PM</strong></span></div>
   <div class="info-item"><i class="ti ti-phone" aria-hidden="true"></i><span><strong>+44 20 1234 5678</strong></span></div>
-  <div class="info-item"><i class="ti ti-star" aria-hidden="true"></i><span>Рейтинг <strong>4.9 ★</strong> · 1 240 отзывов</span></div>
+  <div class="info-item"><i class="ti ti-star" aria-hidden="true"></i><span>Rating <strong>4.9 ★</strong> · 1,240 reviews</span></div>
 </div>
 
 <section id="menu" class="menu">
@@ -205,22 +205,22 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
     <div class="about-block">
       <span class="about-big">🏠</span>
       <span class="about-num">12 years</span>
-      <div class="about-label">Кормим гостей</div>
+      <div class="about-label">Serving guests</div>
     </div>
     <div class="about-block">
       <span class="about-num">48K+</span>
-      <div class="about-label">Довольных гостей</div>
+      <div class="about-label">Happy guests</div>
     </div>
     <div class="about-block">
       <span class="about-num">4.9★</span>
-      <div class="about-label">Средний рейтинг</div>
+      <div class="about-label">Average rating</div>
     </div>
   </div>
   <div class="about-text">
     <div class="sec-eyebrow anim">About us</div>
     <h2 class="sec-title anim">Cooking like <em>home</em></h2>
-    <p class="anim">Hearth is a place where time slows down. Мы готовим по рецептам, которые передаются из поколения в поколение, используя только свежие фермерские продукты.</p>
-    <p class="anim">Our head chef Andrew Sokolov picks the finest ingredients at the market every morning — чтобы каждое блюдо было как приготовленное с любовью дома.</p>
+    <p class="anim">Hearth is a place where time slows down. We cook from recipes passed down through generations, using only the freshest farm produce.</p>
+    <p class="anim">Our head chef Andrew Sokolov picks the finest ingredients at the market every morning — so that every dish tastes like it was made with love at home.</p>
     <div class="features anim">
       <div class="feature"><i class="ti ti-leaf" aria-hidden="true"></i> Farm-fresh produce</div>
       <div class="feature"><i class="ti ti-chef-hat" aria-hidden="true"></i> Experienced head chef</div>
@@ -238,7 +238,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
     <div class="booking-form anim">
       <input class="b-input" type="text" placeholder="Your name">
       <input class="b-input" type="tel" placeholder="Phone">
-      <input class="b-input" type="date">
+      <input class="b-input" type="text" placeholder="MM / DD / YYYY" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
       <select class="b-input">
         <option>18:00</option><option>18:30</option><option>19:00</option>
         <option>19:30</option><option>20:00</option><option>20:30</option>
@@ -259,23 +259,23 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
 
 <footer>
   <div class="f-brand">
-    <div class="logo">Оча<span>г</span></div>
-    <p>Home Kitchen Restaurant в Москве. Готовим с любовью с 2012 года.</p>
+    <div class="logo">Hear<span>th</span></div>
+    <p>Home Kitchen Restaurant in London. Cooking with love since 2012.</p>
   </div>
   <div class="f-col">
     <h4>Menu</h4>
     <a href="#">Soups</a><a href="#">Mains</a><a href="#">Salads</a><a href="#">Desserts</a>
   </div>
   <div class="f-col">
-    <h4>Контакты</h4>
-    <a href="#">ул. Садовая, 8</a>
+    <h4>Contacts</h4>
+    <a href="#">8 Garden Street, London</a>
     <a href="#">+44 20 1234 5678</a>
-    <a href="#">Пн–Вс: 11–23</a>
+    <a href="#">Mon–Sun: 11AM–11PM</a>
     <a href="#">Instagram</a>
   </div>
 </footer>
 <div class="f-bottom">
-  <div class="f-copy">© 2025 Ресторан «Hearth» · All права защищены</div>
+  <div class="f-copy">© 2025 Hearth Restaurant · All rights reserved</div>
   <div class="f-socials">
     <a class="soc" href="#"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
     <a class="soc" href="#"><i class="ti ti-brand-telegram" aria-hidden="true"></i></a>
@@ -285,7 +285,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
 
 <script>
 const dishes = [
-  {name:'Homestyle Borscht',desc:'Со сметаной и пампушками',price:'£7',weight:'380 г',emoji:'🍲',cat:'soup'},
+  {name:'Homestyle Borscht',desc:'With sour cream and buns',price:'£7',weight:'380g',emoji:'🍲',cat:'soup'},
   {name:'Sauerkraut Soup',desc:'With meat and potatoes',price:'£6',weight:'350g',emoji:'🥣',cat:'soup'},
   {name:'Fisherman Soup',desc:'Three-fish broth',price:'£8',weight:'400g',emoji:'🐟',cat:'soup'},
   {name:'Ribeye Steak',desc:'With potatoes and sauce',price:'£18',weight:'280g',emoji:'🥩',cat:'main'},
