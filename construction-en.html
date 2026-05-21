@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUILD.PRO — Construction Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#111010;
+  --bg2:#1a1918;
+  --bg3:#242220;
+  --text:#f0ece6;
+  --text2:#8a8278;
+  --accent:#e8a020;
+  --accent2:#f5b830;
+  --border:rgba(232,160,32,0.15);
+  --border2:rgba(255,255,255,0.07);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(17,16,16,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border2)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.1em;color:var(--text)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text2);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#111;border:none;padding:0.55rem 1.4rem;font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;text-decoration:none}
+.nav-cta:hover{background:var(--accent2)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#111010 0%,#1a1510 40%,#0d0c0c 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,160,32,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,160,32,0.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-num{position:absolute;right:3rem;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:22rem;color:rgba(232,160,32,0.04);line-height:1;pointer-events:none;letter-spacing:-0.05em}
+.hero-tag{position:relative;z-index:1;font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.hero-tag::before{content:'';width:40px;height:2px;background:var(--accent)}
+.hero h1{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,9rem);line-height:0.92;letter-spacing:0.02em;margin-bottom:2rem}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem}
+.hero-desc{font-size:0.92rem;line-height:1.8;color:var(--text2);max-width:380px}
+.hero-actions{display:flex;gap:1rem;align-items:center}
+.btn-accent{background:var(--accent);color:#111;border:none;padding:1rem 2.5rem;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block}
+.btn-accent:hover{background:var(--accent2)}
+.btn-line{background:transparent;color:var(--text);border:1px solid var(--border2);padding:1rem 2rem;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:border-color 0.2s;text-decoration:none;display:inline-block}
+.btn-line:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;gap:0;border:1px solid var(--border2)}
+.hstat{padding:1.2rem 2rem;border-right:1px solid var(--border2);text-align:center}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--accent);letter-spacing:0.05em;line-height:1}
+.hstat-l{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text2);margin-top:0.2rem}
+
+/* SERVICES */
+.services{padding:6rem 3rem;border-top:1px solid var(--border2)}
+.sec-label{font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:0.05em;margin-bottom:3rem;line-height:1}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2)}
+.svc{background:var(--bg);padding:2.5rem;transition:background 0.3s;position:relative;overflow:hidden}
+.svc:hover{background:var(--bg2)}
+.svc::before{content:attr(data-num);position:absolute;right:1.5rem;top:1rem;font-family:'Bebas Neue',sans-serif;font-size:5rem;color:rgba(232,160,32,0.06);line-height:1}
+.svc-icon{font-size:1.5rem;color:var(--accent);margin-bottom:1.5rem}
+.svc-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.05em;margin-bottom:0.6rem}
+.svc-desc{font-size:0.8rem;line-height:1.7;color:var(--text2);margin-bottom:1.5rem}
+.svc-price{font-size:0.82rem;color:var(--accent);letter-spacing:0.05em}
+.svc-price span{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.05em}
+
+/* PROJECTS */
+.projects{padding:6rem 3rem;border-top:1px solid var(--border2)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border2);margin-top:3rem}
+.project-card{background:var(--bg2);position:relative;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:flex-end;cursor:pointer}
+.project-card:first-child{grid-row:span 2;aspect-ratio:auto}
+.project-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6rem;background:var(--bg3);transition:transform 0.4s}
+.project-card:hover .project-bg{transform:scale(1.05)}
+.project-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,16,0.95) 0%,transparent 60%)}
+.project-info{position:relative;z-index:1;padding:1.5rem;width:100%}
+.project-cat{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem}
+.project-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.05em;margin-bottom:0.2rem}
+.project-meta{font-size:0.72rem;color:var(--text2)}
+
+/* PROCESS */
+.process{padding:6rem 3rem;border-top:1px solid var(--border2);background:var(--bg2)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border2);margin-top:3rem}
+.step{background:var(--bg2);padding:2rem;position:relative}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(232,160,32,0.15);line-height:1;margin-bottom:1rem}
+.step-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.05em;margin-bottom:0.5rem}
+.step-desc{font-size:0.78rem;line-height:1.7;color:var(--text2)}
+.step-line{position:absolute;top:2rem;right:0;width:1px;height:40px;background:var(--accent);opacity:0.3}
+
+/* WHY */
+.why{padding:6rem 3rem;border-top:1px solid var(--border2)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+.why-items{display:flex;flex-direction:column;gap:1.5rem}
+.why-item{display:flex;gap:1.5rem;align-items:flex-start;padding:1.5rem;border:1px solid var(--border2);transition:border-color 0.3s}
+.why-item:hover{border-color:var(--border)}
+.why-icon{font-size:1.3rem;color:var(--accent);flex-shrink:0;margin-top:0.1rem}
+.why-name{font-size:0.92rem;font-weight:600;margin-bottom:0.3rem}
+.why-desc{font-size:0.78rem;color:var(--text2);line-height:1.6}
+.why-visual{background:var(--bg2);border:1px solid var(--border2);padding:3rem;text-align:center}
+.why-big{font-family:'Bebas Neue',sans-serif;font-size:6rem;color:var(--accent);line-height:1;display:block}
+.why-big-label{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text2);margin-top:0.5rem}
+.why-divider{width:1px;height:60px;background:var(--border2);margin:2rem auto}
+
+/* CONTACT */
+.contact{padding:6rem 3rem;border-top:1px solid var(--border2);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-text .sec-title{margin-bottom:1rem}
+.contact-text p{font-size:0.88rem;line-height:1.8;color:var(--text2);margin-bottom:2rem}
+.contact-info{display:flex;flex-direction:column;gap:1rem}
+.cinfo{display:flex;align-items:center;gap:1rem;font-size:0.82rem;color:var(--text2)}
+.cinfo i{color:var(--accent);font-size:1rem;width:20px}
+.contact-form{display:flex;flex-direction:column;gap:0.8rem}
+.f-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text2);margin-bottom:0.3rem}
+.f-group{display:flex;flex-direction:column}
+.f-input{background:var(--bg2);border:1px solid var(--border2);color:var(--text);padding:0.85rem 1rem;font-family:'Inter',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.2s;width:100%}
+.f-input:focus{border-color:var(--accent)}
+textarea.f-input{resize:none;height:100px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+
+/* FOOTER */
+footer{padding:2rem 3rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center}
+.f-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.1em;color:var(--text)}
+.f-logo span{color:var(--accent)}
+.f-copy{font-size:0.72rem;color:var(--text2)}
+.f-socials{display:flex;gap:0.75rem}
+.soc{width:34px;height:34px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--text2);text-decoration:none;font-size:0.85rem;transition:all 0.2s}
+.soc:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ANIM */
+.anim{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.anim.visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-tag{animation:fadeUp 0.5s ease both}
+.hero h1{animation:fadeUp 0.5s 0.1s ease both}
+.hero-bottom{animation:fadeUp 0.5s 0.2s ease both}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .hero{padding:5rem 1.5rem 3rem}
+  .hero-num{display:none}
+  .hero-stats{flex-wrap:wrap}
+  .hstat{flex:1 1 40%}
+  .services,.projects,.process,.why,.contact{padding:4rem 1.5rem}
+  .svc-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .project-card:first-child{grid-row:auto;aspect-ratio:16/9}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
+  .f-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">СТРОЙ<span>.</span>PRO</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Объекты</a></li>
+    <li><a href="#contact">Contacts</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-num">15</div>
+  <div class="hero-tag">Construction Company · London</div>
+  <h1>We build<br><em>to last</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">Full cycle construction and renovation. From foundation to finish — we handle everything and guarantee results.</p>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;align-items:flex-end">
+      <div class="hero-actions">
+        <a class="btn-accent" href="#contact">Get a Quote</a>
+        <a class="btn-line" href="#projects">Our Projects</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">15+</div><div class="hstat-l">Years on market</div></div>
+        <div class="hstat"><div class="hstat-n">340</div><div class="hstat-l">Projects done</div></div>
+        <div class="hstat"><div class="hstat-n">98%</div><div class="hstat-l">On time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="sec-label anim">What we do</div>
+  <div class="sec-title anim">Services</div>
+  <div class="svc-grid">
+    <div class="svc anim" data-num="01">
+      <div class="svc-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div class="svc-name">Turnkey Construction</div>
+      <p class="svc-desc">Private homes, cottages, commercial buildings. Full cycle from design to handover.</p>
+      <div class="svc-price">от <span>3 500</span> ₽/м²</div>
+    </div>
+    <div class="svc anim" data-num="02">
+      <div class="svc-icon"><i class="ti ti-tools" aria-hidden="true"></i></div>
+      <div class="svc-name">Apartment Renovation</div>
+      <p class="svc-desc">Cosmetic, major, designer renovation. We work neatly and on time.</p>
+      <div class="svc-price">от <span>4 500</span> ₽/м²</div>
+    </div>
+    <div class="svc anim" data-num="03">
+      <div class="svc-icon"><i class="ti ti-ruler" aria-hidden="true"></i></div>
+      <div class="svc-name">Design & Planning</div>
+      <p class="svc-desc">Architectural and structural solutions, government approval included.</p>
+      <div class="svc-price">от <span>800</span> ₽/м²</div>
+    </div>
+    <div class="svc anim" data-num="04">
+      <div class="svc-icon"><i class="ti ti-crane" aria-hidden="true"></i></div>
+      <div class="svc-name">Foundation Works</div>
+      <p class="svc-desc">Strip, slab, pile foundations. Geology survey and calculation included.</p>
+      <div class="svc-price">от <span>1 200</span> ₽/м²</div>
+    </div>
+    <div class="svc anim" data-num="05">
+      <div class="svc-icon"><i class="ti ti-current-ac" aria-hidden="true"></i></div>
+      <div class="svc-name">Engineering Systems</div>
+      <p class="svc-desc">Electrical, plumbing, heating, ventilation. Installation and commissioning.</p>
+      <div class="svc-price">от <span>2 000</span> ₽/м²</div>
+    </div>
+    <div class="svc anim" data-num="06">
+      <div class="svc-icon"><i class="ti ti-tree" aria-hidden="true"></i></div>
+      <div class="svc-name">Landscape Design</div>
+      <p class="svc-desc">Territory improvement, pathways, landscaping, lighting.</p>
+      <div class="svc-price">от <span>600</span> ₽/м²</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="sec-label anim">Portfolio</div>
+  <div class="sec-title anim">Our Projects</div>
+  <div class="projects-grid">
+    <div class="project-card anim">
+      <div class="project-bg">🏠</div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+        <div class="project-cat">Residential</div>
+        <div class="project-name">Countryside Cottage</div>
+        <div class="project-meta">450 м² · Timeline: 8 months · 2024</div>
+      </div>
+    </div>
+    <div class="project-card anim">
+      <div class="project-bg">🏢</div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+        <div class="project-cat">Commercial</div>
+        <div class="project-name">Office Center</div>
+        <div class="project-meta">1 200 м² · Timeline: 14 months · 2024</div>
+      </div>
+    </div>
+    <div class="project-card anim">
+      <div class="project-bg">🏗️</div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+        <div class="project-cat">Renovation</div>
+        <div class="project-name">Downtown Apartments</div>
+        <div class="project-meta">120 м² · Timeline: 3 месяца · 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="sec-label anim">How we work</div>
+  <div class="sec-title anim">Work stages</div>
+  <div class="process-steps">
+    <div class="step anim">
+      <div class="step-num">01</div>
+      <div class="step-name">Survey & Quote</div>
+      <p class="step-desc">Free site visit, exact cost calculated on the day of enquiry.</p>
+      <div class="step-line"></div>
+    </div>
+    <div class="step anim">
+      <div class="step-num">02</div>
+      <div class="step-name">Contract</div>
+      <p class="step-desc">Fixed price, timeline and warranty. No hidden costs.</p>
+      <div class="step-line"></div>
+    </div>
+    <div class="step anim">
+      <div class="step-num">03</div>
+      <div class="step-name">Construction</div>
+      <p class="step-desc">We work on schedule, weekly photo reports.</p>
+      <div class="step-line"></div>
+    </div>
+    <div class="step anim">
+      <div class="step-num">04</div>
+      <div class="step-name">Handover</div>
+      <p class="step-desc">Joint acceptance, all issues fixed. 5-year warranty.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="sec-label anim">Why us</div>
+  <div class="sec-title anim">Our advantages</div>
+  <div class="why-grid">
+    <div class="why-items">
+      <div class="why-item anim">
+        <div class="why-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+        <div><div class="why-name">5-Year Warranty</div><p class="why-desc">On all types of work. If something goes wrong — we fix it at our expense.</p></div>
+      </div>
+      <div class="why-item anim">
+        <div class="why-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+        <div><div class="why-name">On-time delivery</div><p class="why-desc">98% of projects delivered on time. Every day of delay — we pay a penalty.</p></div>
+      </div>
+      <div class="why-item anim">
+        <div class="why-icon"><i class="ti ti-certificate" aria-hidden="true"></i></div>
+        <div><div class="why-name">Full SRO Licenses</div><p class="why-desc">We work officially, with contract and full documentation.</p></div>
+      </div>
+      <div class="why-item anim">
+        <div class="why-icon"><i class="ti ti-coin" aria-hidden="true"></i></div>
+        <div><div class="why-name">Fixed Price</div><p class="why-desc">Contract price is final. No additional invoices.</p></div>
+      </div>
+    </div>
+    <div class="why-visual anim">
+      <span class="why-big">340</span>
+      <div class="why-big-label">Projects done</div>
+      <div class="why-divider"></div>
+      <span class="why-big" style="font-size:4rem">15 лет</span>
+      <div class="why-big-label">На строительном рынке</div>
+      <div class="why-divider"></div>
+      <span class="why-big" style="font-size:4rem">5 лет</span>
+      <div class="why-big-label">Гарантия на работы</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-text">
+    <div class="sec-label anim">Contacts</div>
+    <div class="sec-title anim">Get a Quote</div>
+    <p class="anim">Leave a request — we will call back within 30 minutes and calculate the cost for free.</p>
+    <div class="contact-info anim">
+      <div class="cinfo"><i class="ti ti-map-pin" aria-hidden="true"></i> Москва, 12 Builder Street, London</div>
+      <div class="cinfo"><i class="ti ti-phone" aria-hidden="true"></i> +7 (495) 123-45-67</div>
+      <div class="cinfo"><i class="ti ti-clock" aria-hidden="true"></i> Mon–Sun: 8:00 AM – 8:00 PM</div>
+      <div class="cinfo"><i class="ti ti-brand-telegram" aria-hidden="true"></i> @stroypromoscow</div>
+    </div>
+  </div>
+  <div class="contact-form anim">
+    <div class="f-row">
+      <div class="f-group"><div class="f-label">Name</div><input class="f-input" type="text" placeholder="Иван Иванов"></div>
+      <div class="f-group"><div class="f-label">Phone</div><input class="f-input" type="tel" placeholder="+7 (___) ___-__-__"></div>
+    </div>
+    <div class="f-group"><div class="f-label">Type of work</div>
+      <select class="f-input">
+        <option>Turnkey Construction</option>
+        <option>Apartment Renovationы</option>
+        <option>Design & Planning</option>
+        <option>Foundation Works</option>
+        <option>Engineering Systems</option>
+      </select>
+    </div>
+    <div class="f-group"><div class="f-label">Area and description</div><textarea class="f-input" placeholder="Describe the object, area, requirements..."></textarea></div>
+    <button class="btn-accent" style="width:100%;padding:1rem;font-size:0.88rem;border:none;cursor:pointer" onclick="alert('Request received! We will call back within 30 minutes.')">Get a free quote</button>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">СТРОЙ<span>.</span>PRO</div>
+  <div class="f-copy">© 2025 BUILD.PRO · All rights reserved</div>
+  <div class="f-socials">
+    <a class="soc" href="#"><i class="ti ti-brand-telegram" aria-hidden="true"></i></a>
+    <a class="soc" href="#"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
+    <a class="soc" href="#"><i class="ti ti-brand-vk" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible') });
+},{threshold:0.08});
+document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
